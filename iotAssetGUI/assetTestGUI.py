@@ -44,7 +44,7 @@ if __name__=='__main__':
     button_hbox.Add(endButton,proportion=0,flag=wx.RIGHT,border=5)
     vbox.Add(button_hbox,proportion=0,flag=wx.EXPAND|wx.ALIGN_LEFT|wx.ALL,border=5)
 
-    startButton.Bind(wx.KeyEvent,myMainFrame.startTest())
+    #startButton.Bind(wx.KeyEvent,myMainFrame.startTest())
 
     myPanel.SetSizer(vbox)
     myMainFrame.Show()
