@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9f0b7a1-f273-4376-bd11-9a82830bcf8f" name="Default Changelist" comment="" />
+    <list default="true" id="a9f0b7a1-f273-4376-bd11-9a82830bcf8f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iotAssetGUI/rfidTestToolGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/iotAssetGUI/rfidTestToolGUI.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,27 +107,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="listTextEntryDialogSet" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="iotAsset_testTool" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testWX" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testWX/listTextEntryDialogSet.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="rfidTestToolGUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="iotAsset_testTool" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -146,13 +128,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="testPanel" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="iotAsset_testTool" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testWXSizer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testWXSizer/testPanel.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.rfidTestToolGUI" />
+        <item itemvalue="Python.testPanel" />
         <item itemvalue="Python.assetTestGUI" />
         <item itemvalue="Python.check" />
         <item itemvalue="Python.gridSizerFrame" />
-        <item itemvalue="Python.listTextEntryDialogSet" />
       </list>
     </recent_temporary>
   </component>
@@ -176,38 +179,38 @@
       <screen x="1920" y="-260" width="2048" height="1112" />
     </state>
     <state x="2765" y="209" width="382" height="173" key="Github.CreateGistDialog/0.0.1920.1040/1920.-260.2048.1112@1920.-260.2048.1112" timestamp="1578496596621" />
-    <state width="2027" height="233" key="GridCell.Tab.0.bottom" timestamp="1578502991638">
+    <state width="2027" height="426" key="GridCell.Tab.0.bottom" timestamp="1578585787209">
       <screen x="1920" y="-260" width="2048" height="1112" />
     </state>
-    <state width="2027" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-260.2048.1112@1920.-260.2048.1112" timestamp="1578502991638" />
-    <state width="2027" height="233" key="GridCell.Tab.0.center" timestamp="1578502991638">
+    <state width="2027" height="426" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-260.2048.1112@1920.-260.2048.1112" timestamp="1578585787209" />
+    <state width="2027" height="426" key="GridCell.Tab.0.center" timestamp="1578585787209">
       <screen x="1920" y="-260" width="2048" height="1112" />
     </state>
-    <state width="2027" height="233" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-260.2048.1112@1920.-260.2048.1112" timestamp="1578502991638" />
-    <state width="2027" height="233" key="GridCell.Tab.0.left" timestamp="1578502991638">
+    <state width="2027" height="426" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-260.2048.1112@1920.-260.2048.1112" timestamp="1578585787209" />
+    <state width="2027" height="426" key="GridCell.Tab.0.left" timestamp="1578585787209">
       <screen x="1920" y="-260" width="2048" height="1112" />
     </state>
-    <state width="2027" height="233" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-260.2048.1112@1920.-260.2048.1112" timestamp="1578502991638" />
-    <state width="2027" height="233" key="GridCell.Tab.0.right" timestamp="1578502991638">
+    <state width="2027" height="426" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-260.2048.1112@1920.-260.2048.1112" timestamp="1578585787209" />
+    <state width="2027" height="426" key="GridCell.Tab.0.right" timestamp="1578585787209">
       <screen x="1920" y="-260" width="2048" height="1112" />
     </state>
-    <state width="2027" height="233" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-260.2048.1112@1920.-260.2048.1112" timestamp="1578502991638" />
-    <state width="2027" height="388" key="GridCell.Tab.1.bottom" timestamp="1578243887648">
+    <state width="2027" height="426" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-260.2048.1112@1920.-260.2048.1112" timestamp="1578585787209" />
+    <state width="2027" height="388" key="GridCell.Tab.1.bottom" timestamp="1578581463942">
       <screen x="1920" y="-260" width="2048" height="1112" />
     </state>
-    <state width="2027" height="388" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.-260.2048.1112@1920.-260.2048.1112" timestamp="1578243887648" />
-    <state width="2027" height="388" key="GridCell.Tab.1.center" timestamp="1578243887648">
+    <state width="2027" height="388" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.-260.2048.1112@1920.-260.2048.1112" timestamp="1578581463942" />
+    <state width="2027" height="388" key="GridCell.Tab.1.center" timestamp="1578581463942">
       <screen x="1920" y="-260" width="2048" height="1112" />
     </state>
-    <state width="2027" height="388" key="GridCell.Tab.1.center/0.0.1920.1040/1920.-260.2048.1112@1920.-260.2048.1112" timestamp="1578243887648" />
-    <state width="2027" height="388" key="GridCell.Tab.1.left" timestamp="1578243887648">
+    <state width="2027" height="388" key="GridCell.Tab.1.center/0.0.1920.1040/1920.-260.2048.1112@1920.-260.2048.1112" timestamp="1578581463942" />
+    <state width="2027" height="388" key="GridCell.Tab.1.left" timestamp="1578581463942">
       <screen x="1920" y="-260" width="2048" height="1112" />
     </state>
-    <state width="2027" height="388" key="GridCell.Tab.1.left/0.0.1920.1040/1920.-260.2048.1112@1920.-260.2048.1112" timestamp="1578243887648" />
-    <state width="2027" height="388" key="GridCell.Tab.1.right" timestamp="1578243887648">
+    <state width="2027" height="388" key="GridCell.Tab.1.left/0.0.1920.1040/1920.-260.2048.1112@1920.-260.2048.1112" timestamp="1578581463942" />
+    <state width="2027" height="388" key="GridCell.Tab.1.right" timestamp="1578581463942">
       <screen x="1920" y="-260" width="2048" height="1112" />
     </state>
-    <state width="2027" height="388" key="GridCell.Tab.1.right/0.0.1920.1040/1920.-260.2048.1112@1920.-260.2048.1112" timestamp="1578243887648" />
+    <state width="2027" height="388" key="GridCell.Tab.1.right/0.0.1920.1040/1920.-260.2048.1112@1920.-260.2048.1112" timestamp="1578581463942" />
     <state x="2446" y="-62" key="SettingsEditor" timestamp="1577544176554">
       <screen x="1920" y="-260" width="2048" height="1112" />
     </state>
