@@ -1,6 +1,6 @@
 #coding:utf-8
 import wx
-import base.main
+import base.testMain
 
 class IotAssetGUI(wx.Frame):
 
