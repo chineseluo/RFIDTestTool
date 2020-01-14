@@ -82,7 +82,7 @@ class CurrentDataFrame:
 			shop_id_byte_array = num_to_bytes(self.shop_id, 3)
 
 			self.all_byte_array = join_list_arg(
-    	    			self.static_header, 
+    	    	self.static_header,
 				self.biz_data_array_len_field, 
 				self.shop_id_field,
 				shop_id_byte_array, 

@@ -1,7 +1,11 @@
-#coding:utf-8
-
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+# @Time  : 2020/1/15
+# @Author: chineseluo
 import wx
 from base import testMain
+from base.data_form_nb import CurrentDataFrame
+import time
 
 
 class RFIDTestToolGui(wx.Frame):
@@ -84,7 +88,7 @@ class RFIDTestToolGui(wx.Frame):
         closeBarItem = wx.MenuItem(fileMenu,wx.ID_CLOSE,"退出",kind=wx.ITEM_NORMAL)
         fileMenu.AppendItem(closeBarItem)
         
-        
+
         
         helpMenu = wx.Menu()
         menuBar.Append(helpMenu,title="帮助")
@@ -100,6 +104,15 @@ class RFIDTestToolGui(wx.Frame):
         #设置状态栏比例
         statusBar.SetStatusWidths([-1,-2])
         statusBar.SetStatusText("Run Start Test Work",0)
+        #设置状态栏时间显示
+        self.timer = wx.PyTimer(self.Notify)
+        self.timer.Start(1000,wx.TIMER_CONTINUOUS)
+        self.Notify()
+
+    def Notify(self):
+        nowTime = time.localtime(time.time())
+        formatTime = time.strftime("%Y-%m-%d   %H:%M:%S",nowTime)
+        self.SetStatusText(formatTime,1)
 
     #初始化侧边栏
     def initSideMarkerBar(self):
@@ -127,9 +140,26 @@ class RFIDTestToolGui(wx.Frame):
         self.panel_testReport = wx.Panel(self.rpanel,-1,size=(self.rpanel.GetClientSize().width,self.rpanel.GetClientSize().height))
         print(self.rpanel.GetClientSize().width)
         print(self.rpanel.GetClientSize().height)
-        self.panel_testReport.SetBackgroundColour("blue")
-        
-        self.panel_testReport.Refresh()
+        #self.panel_testReport.SetBackgroundColour("blue")
+
+        vbox = wx.BoxSizer(wx.VERTICAL)
+        testPackageData_Hbox = wx.BoxSizer(wx.HORIZONTAL)
+        testPackageData_model = wx.StaticText(self.panel_testReport,-1)
+        testPackageDataInfo_content = wx.TextCtrl(self.panel_testReport,-1,"111",style = wx.TE_MULTILINE)
+        self.base_Attr_Model(testPackageData_Hbox,vbox,testPackageData_model,testPackageDataInfo_content,"发送的报文数据：")
+
+        testPackageCount_Hbox = wx.BoxSizer(wx.HORIZONTAL)
+        testPackageCount_model = wx.StaticText(self.panel_testReport,-1)
+        testPackageCountInfo_content = wx.StaticText(self.panel_testReport,-1,"222",style = wx.TE_MULTILINE)
+        self.base_Attr_Model(testPackageCount_Hbox,vbox,testPackageCount_model,testPackageCountInfo_content,"发送的报文总条数：")
+        self.panel_testReport.SetSizer(vbox)
+
+        main_sizer= wx.BoxSizer()
+        main_sizer.Add(self.panel_testReport,flag=wx.EXPAND,proportion=1)
+        self.rpanel.SetSizer(main_sizer)
+        self.rpanel.Layout()
+
+
         
 
     #初始化测试数据面板
@@ -144,53 +174,53 @@ class RFIDTestToolGui(wx.Frame):
         #设置横向布局管理器
         label_type_hbox = wx.BoxSizer(wx.HORIZONTAL)
         label_type_text_model = wx.StaticText(self.panel_moniPkgTest,-1)
-        self.label_type_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_RIGHT|wx.EXPAND)
+        self.label_type_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_LEFT|wx.EXPAND)
         self.label_type_content.SetFocus()
         self.base_Attr_Model(label_type_hbox, vbox, label_type_text_model, self.label_type_content, "label_type：")
         
         shop_id_hbox = wx.BoxSizer(wx.HORIZONTAL)
         shop_id_text_model = wx.StaticText(self.panel_moniPkgTest,-1)
-        self.shop_id_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_RIGHT|wx.EXPAND)
+        self.shop_id_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_LEFT|wx.EXPAND)
         self.base_Attr_Model(shop_id_hbox, vbox, shop_id_text_model, self.shop_id_content, "shop_id：")
 
         module_id_range_hbox = wx.BoxSizer(wx.HORIZONTAL)
         module_id_range_model = wx.StaticText(self.panel_moniPkgTest,-1)
-        self.module_id_range_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_RIGHT|wx.EXPAND)
+        self.module_id_range_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_LEFT|wx.EXPAND)
         self.base_Attr_Model(module_id_range_hbox, vbox, module_id_range_model, self.module_id_range_content, "module_id_range：")
         
         tmn_sn_range_hbox = wx.BoxSizer(wx.HORIZONTAL)
         tmn_sn_range_model = wx.StaticText(self.panel_moniPkgTest,-1)
-        self.tmn_sn_range_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_RIGHT|wx.EXPAND)
+        self.tmn_sn_range_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_LEFT|wx.EXPAND)
         self.base_Attr_Model(tmn_sn_range_hbox, vbox, tmn_sn_range_model, self.tmn_sn_range_content, "tmn_sn_range：")
         
         current_value_range_hbox = wx.BoxSizer(wx.HORIZONTAL)
         current_value_range_model = wx.StaticText(self.panel_moniPkgTest,-1)
-        self.current_value_range_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_RIGHT|wx.EXPAND)
+        self.current_value_range_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_LEFT|wx.EXPAND)
         self.base_Attr_Model(current_value_range_hbox, vbox, current_value_range_model, self.current_value_range_content, "current_value_range：")
         
         status_tuple_hbox = wx.BoxSizer(wx.HORIZONTAL)
         status_tuple_model = wx.StaticText(self.panel_moniPkgTest,-1)
-        self.status_tuple_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_RIGHT|wx.EXPAND)
+        self.status_tuple_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_LEFT|wx.EXPAND)
         self.base_Attr_Model(status_tuple_hbox, vbox, status_tuple_model, self.status_tuple_content, "status_tuple：")
         
         ip_hbox = wx.BoxSizer(wx.HORIZONTAL)
         ip_model = wx.StaticText(self.panel_moniPkgTest,-1)
-        self.ip_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_RIGHT|wx.EXPAND)
+        self.ip_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_LEFT|wx.EXPAND)
         self.base_Attr_Model(ip_hbox, vbox, ip_model, self.ip_content, "ip：")
         
         port_hbox = wx.BoxSizer(wx.HORIZONTAL)
         port_model = wx.StaticText(self.panel_moniPkgTest,-1)
-        self.port_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_RIGHT|wx.EXPAND)
+        self.port_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_LEFT|wx.EXPAND)
         self.base_Attr_Model(port_hbox, vbox, port_model, self.port_content, "port：")
         
         send_interval_hbox = wx.BoxSizer(wx.HORIZONTAL)
         send_interval_model = wx.StaticText(self.panel_moniPkgTest,-1)
-        self.send_interval_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_CENTER|wx.EXPAND)
+        self.send_interval_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_LEFT|wx.EXPAND)
         self.base_Attr_Model(send_interval_hbox, vbox, send_interval_model, self.send_interval_content, "send_interval：")
         
         monitor_interval_hbox = wx.BoxSizer(wx.HORIZONTAL)
         monitor_interval_model = wx.StaticText(self.panel_moniPkgTest,-1)
-        self.monitor_interval_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_RIGHT|wx.EXPAND)
+        self.monitor_interval_content = wx.TextCtrl(self.panel_moniPkgTest,-1,style = wx.TE_LEFT|wx.EXPAND)
         self.base_Attr_Model(monitor_interval_hbox, vbox, monitor_interval_model, self.monitor_interval_content, "monitor_interval：")
          
          
@@ -222,7 +252,17 @@ class RFIDTestToolGui(wx.Frame):
             port = self.port_content.GetValue()
             send_interval = self.send_interval_content.GetValue()
             monitor_interval = self.monitor_interval_content.GetValue()
-            testMain(label_type, shop_id, module_id_range, tmn_sn_range, current_value_range, status_tuple, ip, port, send_interval, monitor_interval)
+            print(monitor_interval)
+            CurrentDataFrame(
+                data_type=label_type,
+                shop_id=shop_id,
+                module_id_min=module_id_range[0],
+                module_id_max=module_id_range[1],
+                current_value_min=current_value_range[0],
+                current_value_max=current_value_range[1],
+                tmn_sn_min=tmn_sn_range[0],
+                tmn_sn_max=tmn_sn_range[1],
+                status_tuple=status_tuple)
             print("label_type: {}, shop_id: {}, module_id_min: {}, module_id_max: {}, tmn_sn_min: {}, tmn_sn_max: {}, current_value_min: {}, current_value_max: {}, status_tuple: {}, ip: {}, port: {}, send_interval: {}, monitor_interval: {}".format(
             label_type,
             shop_id,
@@ -249,8 +289,6 @@ class RFIDTestToolGui(wx.Frame):
                     self.panelIndex=None
                 else:
                     pass
-                # print(self.panelIndex.Destroy())
-                # print(self.panelIndex)
                 self.panel_testReport.Destroy()
             if not self.panel_moniPkgTest:
                 self.initMoniPkgTestPanel()
